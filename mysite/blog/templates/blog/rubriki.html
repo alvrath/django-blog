@@ -1,0 +1,12 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% for rubrika in rubriki %}
+        <div class="post">
+            <div class="date">
+                {{ rubrika.title }}
+            </div>
+        </div>
+        {{ rubrika.get_absolute_url }}{{ rubrika.title }}
+    {% endfor %}
+{% endblock %}

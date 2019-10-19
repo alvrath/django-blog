@@ -1,0 +1,11 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% for category in categories %}
+         <h1><a href="{% url 'category' slug=category.slug %}">{{ category.title }}</a></h1>
+        {% empty %}
+    <li>Sorry, no posts in this list.</li>
+    {% endfor %}
+<a href="http://127.0.0.1:8000/categories_list/">Список категорий</a>
+<a href="http://127.0.0.1:8000/rubriki/">Рубрики</a>
+{% endblock %}

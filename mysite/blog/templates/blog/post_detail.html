@@ -1,0 +1,12 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="post">
+                {{ post.published_date }}
+                 {{ post.category }}
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+        ссылка: {% url 'post_detail' slug=post.slug %}
+        <a href="/">На главную</a>
+    </div>
+{% endblock %}
